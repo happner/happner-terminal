@@ -25,18 +25,23 @@ meshConfig = {
 ##### in the mesh initialization:
 
 ```javascript
-var happner = require('happner');
-mappner.start( require('./your/meshConfig.js').config )
+
+// start your meshnode
+                                                 // good practice...
+var happner = require('happner');               //
+happner.start( require('./your/meshConfig.js').config )
+
 .then(function(mesh) {
 
   // meshnode is up, start the terminal
 
   mesh.exchange.terminal.start({
     prefix: '> ',  // the prompt
-    help: true     // show the intro help
-  }) //.then... or callback
+    help: true    // show the intro help
+  }, function optionalCallback() {}) // or .then... (promise)
 
 })
+
 .catch...
 
 ```
