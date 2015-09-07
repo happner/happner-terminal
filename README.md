@@ -46,8 +46,8 @@ Module.prototype.start = function($happn, callback) {
 
         // if you don't call the callback you dont het the prompt back, ever!
         // (and you'll need to kill the process from the outside)
-        
-        callback(null, '\nHello world.\n');
+
+        callback(null, '\nHello ' + args[0] + '.\n');
       },
 
       autoComplete(args, callback) {
