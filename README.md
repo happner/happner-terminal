@@ -2,9 +2,13 @@
 
 Terminal for happner (comes bundled).
 
-Provides a prompt into your running mesh. 
+Provides a prompt into your running mesh.
+
+Not a remote prompt.
 
 #### To activate
+
+##### in the config:
 
 ```javascript
 meshConfig = {
@@ -17,6 +21,26 @@ meshConfig = {
   ...
 }
 ```
+
+##### in the mesh initialization:
+
+```javascript
+var happner = require('happner');
+mappner.start( require('./your/meshConfig.js').config )
+.then(function(mesh) {
+
+  // meshnode is up, start the terminal
+
+  mesh.exchange.terminal.start({
+    prefix: '> ',  // the prompt
+    help: true     // show the intro help
+  }) //.then... or callback
+
+})
+.catch...
+
+```
+
 
 __Note__: By putting the terminal component first, other components running their startMethods can detect and use the terminal. eg. To install commands into it.
 
