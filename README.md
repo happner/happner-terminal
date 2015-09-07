@@ -62,6 +62,8 @@ Module.prototype.start = function($happn, callback) {
 
   }
 
+  callback(null);
+
 }
 ```
 
