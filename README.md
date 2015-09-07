@@ -49,7 +49,10 @@ Module.prototype.start = function($happn, callback) {
       },
 
       autoComplete(args, callback) {
-        var possible = ['fullcompletion1', 'fullcompletion2']; // use args to determine
+        var possible = ['world', 
+                        'solarsystem',
+                        'galaxy',
+                        'universe']; // use args to determine next possibilities
         callback(null, possible);
       }
 
