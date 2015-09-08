@@ -1,6 +1,6 @@
 {
   "name": "happner-terminal",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Terminal for happner (comes bundled)",
   "main": "index.js",
   "scripts": {
