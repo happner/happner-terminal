@@ -1,6 +1,6 @@
 {
   "name": "happner-terminal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Terminal for happner (comes bundled)",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/happner/happner-terminal/issues"
   },
-  "homepage": "https://github.com/happner/happner-terminal#readme"
+  "homepage": "https://github.com/happner/happner-terminal#readme",
+  "dependencies": {
+    "bloopl": "^0.0.1"
+  }
 }

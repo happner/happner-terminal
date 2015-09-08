@@ -1,6 +1,11 @@
 module.exports = Terminal;
 
-var prompt = require('./lib/prompt');
+
+
+var prompt = require('bloopl'); // For your matrix pleasure
+                               //  ------------------------
+                              // 
+                             //    Take the 'repl' AND the 'bloopl'
 
 function Terminal() {
   this.commands = require('./lib/actions');
