@@ -1,11 +1,6 @@
 module.exports = Terminal;
 
-
-
-var prompt = require('bloopl'); // For your matrix pleasure
-                               //  ------------------------
-                              // 
-                             //    Take the 'repl' AND the 'bloopl'
+var prompt = require('./lib/prompt');
 
 function Terminal() {
   this.commands = require('./lib/actions');
@@ -14,18 +9,16 @@ function Terminal() {
 
 // Other modules call here to register terminal commands
 
-Terminal.prototype.register = function($happn, commandName, definition, callback) {
+Terminal.prototype.register = function ($happn, commandName, definition, callback) {
 
-                                                        // definition contains functions
-                                                       // so nothing remote will work.
-
-
-                                                    // thinking about it...
+  // definition contains functions
+  // so nothing remote will work.
+  // thinking about it...
 
   $happn.log.$$DEBUG('register ' + commandName);
 
   if (this.commands[commandName]) {
-    $happn.log.warn('cannot re-register command \'' +commandName+ '\'');
+    $happn.log.warn('cannot re-register command \'' + commandName + '\'');
     return;
   }
 
@@ -45,11 +38,11 @@ Terminal.prototype.register = function($happn, commandName, definition, callback
 // Start the prompt.
 // Need happner mesh event's, here to start the prompt on up and running (ie. all started)
 
-Terminal.prototype.start = function($happn, opts, callback) {
+Terminal.prototype.start = function ($happn, opts, callback) {
 
   var _this = this;
 
-  $happn.log.on('before', function() {
+  $happn.log.on('before', function () {
 
     if (prompt.node) return;
 
@@ -58,21 +51,21 @@ Terminal.prototype.start = function($happn, opts, callback) {
 
     console._stdout.clearLine();  // node version 0.9 & higher (i think)
     console._stdout.cursorTo(0);
-  
+
   });
 
-  
+
   var replace;
-  
-  $happn.log.on('after', function() {
+
+  $happn.log.on('after', function () {
 
     if (prompt.node) return;
 
     // Rewrite prompt after logger write (moments later)
 
     clearTimeout(replace);
-    
-    replace = setTimeout(function() {
+
+    replace = setTimeout(function () {
       var newLine = false;
       prompt.writePrompt(newLine);
     }, 10);
@@ -95,7 +88,7 @@ Terminal.prototype.$happner = {
         exclusive: true,
         methods: {
           'register': {},
-          'start': {},
+          'start': {}
         }
       }
     }
