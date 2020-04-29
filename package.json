@@ -1,6 +1,6 @@
 {
   "name": "happner-terminal",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Terminal for happner (comes bundled)",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/happner/happner-terminal#readme",
   "dependencies": {
-    "async": "^2.1.2",
+    "async": "^3.2.0",
     "colors": "^1.1.2",
     "emdee": "0.0.3",
     "fs-extra": "^1.0.0",
